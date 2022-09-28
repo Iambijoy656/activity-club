@@ -6,7 +6,7 @@ const Activity = (props) => {
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
-                <figure><img src={picture} alt="pics" /></figure>
+                <figure><img className='w-full h-48' src={picture} alt="pics" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p>Finding motivation to work out can be challenging. There are so many distractions and less physically demanding alternatives to spending an hour at the gym or working out at home</p>
