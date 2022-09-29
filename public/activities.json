@@ -4,41 +4,41 @@
         "picture": "https://www.starfitnesstn.com/system/cms/modules/themes/default/assets/images/slides/slide2.jpg",
         "age": 21,
         "name": "Dumble",
-        "time": "30"
+        "time": 30
     },
     {
         "id": "6334abd913f53ed4e8c969c5",
         "picture": "https://hips.hearstapps.com/hmg-prod/images/full-length-of-male-athlete-doing-push-ups-in-gym-royalty-free-image-1606406029.",
         "age": 30,
         "name": "Push Up",
-        "time": "20"
+        "time": 20
     },
     {
         "id": "6334abd9990934c595f1d121",
         "picture": "https://cdn.shopify.com/s/files/1/1876/4703/articles/shutterstock_1706933392_1000x.jpg?v=1628675222",
         "age": 40,
-        "time": "25",
+        "time": 25,
         "name": "Chin Up"
     },
     {
         "id": "6334abd917fdbc240e906a5e",
         "picture": "https://image.boxrox.com/2021/10/cable-crossover.jpg",
         "age": 22,
-        "time": "15",
+        "time": 15,
         "name": "cable crossover"
     },
     {
         "id": "6334abd9a73ec76e78359283",
         "picture": "https://i.insider.com/5f2317053f73702b660c47ec?width=1000&format=jpeg&auto=webp",
         "age": 28,
-        "time": "30",
+        "time": 30,
         "name": "plank"
     },
     {
         "id": "6334abd9f0dd6e43db3b45e8",
         "picture": "https://hips.hearstapps.com/hmg-prod/images/man-work-out-with-ab-roller-royalty-free-image-1580143477.jpg",
         "age": 40,
-        "time": "40",
+        "time": 40,
         "name": "AB roller workout"
     }
 ]

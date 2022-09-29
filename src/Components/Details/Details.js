@@ -1,8 +1,30 @@
-import React from 'react';
+import { parse } from 'postcss';
+import React, { useState } from 'react';
 
 const Details = ({ details }) => {
+    // console.log(details)
+    const [breakTime, setBreakTime] = useState(0)
+
+    let totalExerciseTime = 0;
+    for (const activity of details) {
+        totalExerciseTime = totalExerciseTime + activity.time;
+
+    }
+
+
+
+    const getBreakTime = (e) => {
+        const breakTimeString = e.target.innerText;
+        const breakTime = parseInt(breakTimeString);
+        setBreakTime(breakTime);
+    }
+
+
+
+
+
     return (
-        <div className='flex flex-col gap-3 p-2 py-2'>
+        <div className='flex flex-col gap-3 p-2 py-2 '>
             <h3 className='text-center bg-primary p-2 rounded text-white my-3'>User Information</h3>
             <p>Activities: {details.length} </p>
 
@@ -39,11 +61,11 @@ const Details = ({ details }) => {
                 <h1>Add A Break</h1>
 
                 <div className='flex justify-between bg-white p-3 rounded-lg'>
-                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span>10</span>s</h1>
-                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span>15</span>s</h1>
-                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span>20</span>s</h1>
-                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span>40</span>s</h1>
-                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span>50</span>s</h1>
+                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary' ><span onClick={getBreakTime}>10</span>s</h1>
+                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span onClick={getBreakTime}>15</span>s</h1>
+                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span onClick={getBreakTime}>20</span>s</h1>
+                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span onClick={getBreakTime}>40</span>s</h1>
+                    <h1 className='bg-slate-100 p-2 rounded-lg mr-1 hover:bg-primary'><span onClick={getBreakTime}>50</span>s</h1>
                 </div>
             </div>
 
@@ -52,11 +74,11 @@ const Details = ({ details }) => {
                 <h1 className='mb-2'>Exercise Details</h1>
                 <div className='bg-white p-3 flex justify-between rounded-lg' >
                     <h1>Exercise time</h1>
-                    <small>200 <small>seconds</small></small>
+                    <small>{totalExerciseTime}  <small> seconds</small></small>
                 </div>
                 <div className='bg-white p-3 flex justify-between rounded-lg my-2' >
                     <h1>Break time</h1>
-                    <small>200 <small>seconds</small></small>
+                    <small>{breakTime}<small>seconds</small></small>
                 </div>
             </div>
 

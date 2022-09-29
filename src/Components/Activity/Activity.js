@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Activity = (props) => {
+
+
 
     const { name, picture, time, age } = props.activity;
     const { handleAddToCart } = props;

@@ -44,7 +44,7 @@ const Display = () => {
 
 
 
-                <div className='bg-slate-100'>
+                <div className='bg-slate-100  cart'>
                     <Details details={details}></Details>
                 </div>
             </div >
