@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Activity from '../Activity/Activity';
 import Details from '../Details/Details';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Display.css'
 
 const Display = () => {
     const [activities, setActivities] = useState([]);
 
-    const [details, setDetails] = useState([])
+    const [time, setTime] = useState(0)
 
 
     useEffect(() => {
@@ -15,19 +17,32 @@ const Display = () => {
             .then(data => setActivities(data))
     }, []);
 
+    const notify = () => toast("Wow complete Activity!");
+
+    let exTime = 0;
+    const saveExcerciseData = localStorage.getItem('saveExcerciseData');
+
+
     const handleAddToCart = (activity) => {
-        console.log(activity)
-        const updateDetails = [...details, activity];
-        setDetails(updateDetails)
+        if (saveExcerciseData) {
+            exTime = activity + parseInt(saveExcerciseData);
+        } else {
+            exTime = activity + time;
+        }
+
+        setTime(exTime)
+        localStorage.setItem('saveExcerciseData', exTime);
 
     }
 
 
 
 
+    // console.log(time)
 
     return (
         <div>
+            <ToastContainer />
 
             <div className='grid xl:grid-cols-[3fr_1fr] md:grid-cols-[3fr_1fr] gap-4  my-5 w-9/12 mx-auto  sm:flex-col'>
 
@@ -45,7 +60,7 @@ const Display = () => {
 
 
                 <div className='bg-slate-100  cart'>
-                    <Details details={details}></Details>
+                    <Details time={saveExcerciseData} notify={notify}></Details>
                 </div>
             </div >
         </div>

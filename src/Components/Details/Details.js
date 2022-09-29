@@ -1,15 +1,20 @@
 import { parse } from 'postcss';
+
 import React, { useState } from 'react';
 
-const Details = ({ details }) => {
-    // console.log(details)
-    const [breakTime, setBreakTime] = useState(0)
 
-    let totalExerciseTime = 0;
-    for (const activity of details) {
-        totalExerciseTime = totalExerciseTime + activity.time;
 
-    }
+const Details = ({ time, notify }) => {
+    // console.log(time)
+    const [breakTime, setBreakTime] = useState(0);
+
+
+
+
+
+
+
+
 
 
 
@@ -23,10 +28,15 @@ const Details = ({ details }) => {
 
 
 
+
+
     return (
+
         <div className='flex flex-col gap-3 p-2 py-2 '>
+
+
             <h3 className='text-center bg-primary p-2 rounded text-white my-3'>User Information</h3>
-            <p>Activities: {details.length} </p>
+
 
             <div className='flex bg-white rounded-lg'>
                 <div className="w-10 rounded-full">
@@ -37,6 +47,7 @@ const Details = ({ details }) => {
                     <small>Dhaka,Bangladesh</small>
                 </div>
             </div>
+
 
 
 
@@ -74,7 +85,7 @@ const Details = ({ details }) => {
                 <h1 className='mb-2'>Exercise Details</h1>
                 <div className='bg-white p-3 flex justify-between rounded-lg' >
                     <h1>Exercise time</h1>
-                    <small>{totalExerciseTime}  <small> seconds</small></small>
+                    <small>{time}<small> seconds</small></small>
                 </div>
                 <div className='bg-white p-3 flex justify-between rounded-lg my-2' >
                     <h1>Break time</h1>
@@ -83,8 +94,9 @@ const Details = ({ details }) => {
             </div>
 
             <div className='text-center'>
-                <button className='bg-primary text-white px-3 py-2 rounded-lg'>Activity Complete</button>
+                <button onClick={notify} className='bg-primary text-white px-3 py-2 rounded-lg'>Activity Complete</button>
             </div>
+
 
 
         </div>

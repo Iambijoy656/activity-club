@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Activity = (props) => {
-
-
+    // console.log(props.activity)
 
     const { name, picture, time, age } = props.activity;
     const { handleAddToCart } = props;
@@ -16,7 +15,7 @@ const Activity = (props) => {
                     <p><span className='font-bold'>For age:</span> {age} </p>
                     <p><span className='font-bold'>Time Required :</span> {time}s </p>
                     <div className="card-actions">
-                        <button onClick={() => handleAddToCart(props.activity)} className="btn btn-primary w-full hover:bg-orange-600 ">Add to list</button>
+                        <button onClick={() => handleAddToCart(time)} className="btn btn-primary w-full hover:bg-orange-600 ">Add to list</button>
                     </div>
                 </div>
             </div>
